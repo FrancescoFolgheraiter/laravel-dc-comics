@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', function () {
+Route::get('/', function(){
     return view('welcome');
 });
+
 //tramite resource genero in automatico tutte le rotte necessarie per le CRUD
 //primo argomento è il percorso base secondo è il controller
-Route::resource('comics', ComicController::class);
+Route::resource('/comics', ComicController::class);

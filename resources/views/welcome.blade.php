@@ -4,7 +4,7 @@
 
 @section('main-content')
 <h1>
-   Home dc comics
+   Home page-title
 </h1>
 
 
