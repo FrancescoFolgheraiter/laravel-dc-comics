@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('welcome');
 });
 //tramite resource genero in automatico tutte le rotte necessarie per le CRUD
 //primo argomento è il percorso base secondo è il controller

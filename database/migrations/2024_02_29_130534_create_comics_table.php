@@ -21,7 +21,7 @@ return new class extends Migration
             $table->date('sale_date')->nullable();
             $table->string('type',128);
             $table->json('artists');
-            $table->json('writers')->default(false);
+            $table->json('writers');
             $table->timestamps();
         });
     }
