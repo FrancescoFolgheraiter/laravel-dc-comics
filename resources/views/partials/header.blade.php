@@ -6,14 +6,14 @@
             'active' => true,
         ],
         [
-            'url' => '/chi-siamo',
-            'label' => 'Chi siamo',
+            'url' => '/comics',
+            'label' => 'comics',
             'active' => true,
         ],
         [
-            'url' => '/contatti',
-            'label' => 'Contatti',
-            'active' => false,
+            'url' => '/comics/create',
+            'label' => 'Aggiungi',
+            'active' => true,
         ],
     ];
 @endphp
