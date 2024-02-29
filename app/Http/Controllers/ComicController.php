@@ -40,10 +40,13 @@ class ComicController extends Controller
         $comic->series = $comicData ['series'];
         $comic->sale_date =  $comicData ['sale_date'];
         $comic->type = $comicData ['type'];
-        $comic->artists = json_encode($comicData ['artists']);
-        $comic->writers= json_encode($comicData ['writers']);
-
-        return redirect()->route('pastas.show', ['pasta' => $comic->id]);
+        //salvo il testo degli artisti e lo converto in array
+        $supportArray = explode(",", $comicData ['artists']);
+        $comic->artists = json_encode($supportArray);
+        $supportArray = explode(",", $comicData ['writers']);
+        $comic->writers= json_encode($supportArray);
+        $comic->save();
+        return redirect()->route('comics.index');
     }
 
     /**
