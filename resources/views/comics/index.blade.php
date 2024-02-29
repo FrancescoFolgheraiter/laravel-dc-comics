@@ -17,6 +17,7 @@
             <th scope="col">Tipo</th>
             <th scope="col">Artisti</th>
             <th scope="col">Scrittori</th>
+            <th scope="col">Azione</th>
         </tr>
     </thead>
     <tbody>
@@ -52,6 +53,11 @@
                     $i++;
                 @endphp
             @endwhile
+            </td>
+            <td>
+                <a href="{{ route('comics.show', ['comic' => $comic->id]) }}" class="btn btn-primary">
+                    Vedi
+                </a>
             </td> 
         </tr>
         @endforeach
