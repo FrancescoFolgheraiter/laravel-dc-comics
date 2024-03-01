@@ -23,14 +23,14 @@
     <tbody>
         @foreach ($comics as $comic)
         <tr>
-            <td>{{ $comic['title'] }}</td>
-            <td>{{ $comic['price'] }}</td> 
-            <td>{{ $comic['series'] }}</td> 
-            <td>{{ $comic['sale_date'] }}</td> 
-            <td>{{ $comic['type'] }}</td>
+            <td>{{ $comic->title }}</td>
+            <td>{{ $comic->price }}</td> 
+            <td>{{ $comic->series }}</td> 
+            <td>{{ $comic->sale_date }}</td> 
+            <td>{{ $comic->type }}</td>
             {{-- ciclo interno per stampare solo i primi 3 artisti --}}
             @php
-                $artisti = json_decode($comic['artists']);
+                $artisti = json_decode($comic->artists);
                 $i=0;
             @endphp
             <td> 
@@ -43,7 +43,7 @@
             </td> 
             {{-- ciclo interno per stampare solo i primi 3 scrittori --}}
             @php
-                $scrittori = json_decode($comic['writers']);
+                $scrittori = json_decode($comic->writers);
                 $i=0;
             @endphp
             <td> 
