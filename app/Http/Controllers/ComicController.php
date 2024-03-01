@@ -71,8 +71,15 @@ class ComicController extends Controller
     public function update(Request $request, Comic $comic)
     {
         $comicData = $request->all();
+        //manipolo i dati per poi aggiornali nel db
+        $comicData["price"] = floatval( $comicData ['price']);
+        $supportArray = explode(",", $comicData ['artists']);
+        $comicData["artists"] = json_encode($supportArray);
+        $supportArray = explode(",", $comicData ['writers']);
+        $comicData["writers"]= json_encode($supportArray);
+
         $comic->update($comicData);
-        return redirect()->route('pastas.show', ['pasta' => $comic->id]);
+        return redirect()->route('comics.show', ['comic' => $comic->id]);
     }
 
     /**
