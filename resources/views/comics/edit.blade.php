@@ -22,30 +22,65 @@
             <div class="mb-3">
                <label for="title" class="form-label">Titolo <span class="text-danger">*</span></label>
                <input value="{{ $comic->title }}" type="text" class="form-control" id="title" name="title" placeholder="Inserisci il titolo..." maxlength="64" required>
-           </div>
+               @error('title')
+                    <div class="alert alert-danger">
+                        {{ $message }}
+                    </div>
+               @enderror
+            </div>
             <div class="mb-3">
                <label for="description" class="form-label">Descrizione</label>
                <textarea class="form-control" id="description" name="description" rows="3" placeholder="Inserisci la descrizione...">{{ $comic->description }}</textarea>
+               @error('description')
+                    <div class="alert alert-danger">
+                        {{ $message }}
+                    </div>
+               @enderror
             </div>
             <div class="mb-3">
                <label for="thumb" class="form-label">Thumb <span class="text-danger">*</span></label>
                <input value="{{ $comic->thumb }}" type="text" class="form-control" id="thumb" name="thumb" placeholder="Inserisci l'url dell'immagine..." >
-           </div>
+               @error('thumb')
+                    <div class="alert alert-danger">
+                        {{ $message }}
+                    </div>
+               @enderror
+            </div>
             <div class="mb-3">
                <label for="price" class="form-label">Prezzo</label>
                <input value="{{ $comic->price }}" type="number" step="0.01" class="form-control" id="price" name="price" placeholder="Inserisci il prezzo..." min="0.5" max="200">
+               @error('price')
+                    <div class="alert alert-danger">
+                        {{ $message }}
+                    </div>
+               @enderror
             </div>
             <div class="mb-3">
                <label for="series" class="form-label">Serie </label>
                <input value="{{ $comic->series }}" type="text" class="form-control" id="series" name="series" placeholder="Inserisci la serie..." maxlength="64" required>
-           </div>
+               @error('series')
+                    <div class="alert alert-danger">
+                        {{ $message }}
+                    </div>
+               @enderror
+            </div>
             <div class="mb-3">
                <label for="sale_date" class="form-label">Data </label>
                <input value="{{ $comic->sale_date }}" type="date" class="form-control" id="sale_date" name="sale_date" placeholder="Inserisci la data" >
+               @error('sale_date')
+                    <div class="alert alert-danger">
+                        {{ $message }}
+                    </div>
+               @enderror
             </div>
             <div class="mb-3">
                <label for="type" class="form-label">Tipo</label>
                <input value="{{ $comic->type }}" type="text" class="form-control" id="type" name="type" placeholder="Inserisci il tipo" maxlength="64">
+               @error('type')
+                    <div class="alert alert-danger">
+                        {{ $message }}
+                    </div>
+               @enderror
             </div>
             <div class="mb-3">
                @php
@@ -54,6 +89,11 @@
                @endphp
                <label for="artists" class="form-label">Artisti</label>
                <textarea class="form-control" id="artists" name="artists" rows="3" placeholder="Inserisci gli artisti">{{ $comic->artists }}</textarea>
+               @error('artists')
+                    <div class="alert alert-danger">
+                        {{ $message }}
+                    </div>
+               @enderror
             </div>
             <div class="mb-3">
                @php
@@ -62,6 +102,11 @@
                @endphp
                <label for="writers" class="form-label">Scrittori</label>
                <textarea class="form-control" id="writers" name="writers" rows="3" placeholder="Inserisci gli artisti">{{ $comic->writers }}</textarea>
+               @error('writers')
+                    <div class="alert alert-danger">
+                        {{ $message }}
+                    </div>
+               @enderror
             </div>
             <div>
                <button type="submit" class="btn btn-success w-100">
