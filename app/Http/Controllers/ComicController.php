@@ -40,6 +40,21 @@ class ComicController extends Controller
             'type'=>'required|string|max:128',
             'artists'=>'required|string|max:640',
             'writers'=>'required|string|max:640',
+        ],[
+            'title.required' => 'Il titolo è obbligatorio.',
+            'title.max' => 'Il titolo non può essere più lungo di :max caratteri.',
+            'description.max' => 'La descrizione non può essere più lunga di :max caratteri.',
+            'thumb.url' => 'Il link dell\'immagine in anteprima non è valido.',
+            'price.numeric' => 'Il prezzo deve essere un numero.',
+            'price.max' => 'Il prezzo non può superare :max cifre.',
+            'series.max' => 'La serie non può essere più lunga di :max caratteri.',
+            'sale_date.date' => 'La data di vendita non è valida.',
+            'type.required' => 'Il tipo è obbligatorio.',
+            'type.max' => 'Il tipo non può essere più lungo di :max caratteri.',
+            'artists.required' => 'Gli artisti sono obbligatori.',
+            'artists.max' => 'La lista degli artisti non può essere più lunga di :max caratteri.',
+            'writers.required' => 'Gli scrittori sono obbligatori.',
+            'writers.max' => 'La lista degli scrittori non può essere più lunga di :max caratteri.',
         ]);
         //$comicData = $request->all(); senza validation 
 
@@ -91,6 +106,21 @@ class ComicController extends Controller
             'type'=>'required|string|max:128',
             'artists'=>'required|string|max:640',
             'writers'=>'required|string|max:640',
+        ],[
+            'title.required' => 'Il titolo è obbligatorio.',
+            'title.max' => 'Il titolo non può essere più lungo di :max caratteri.',
+            'description.max' => 'La descrizione non può essere più lunga di :max caratteri.',
+            'thumb.url' => 'Il link dell\'immagine in anteprima non è valido.',
+            'price.numeric' => 'Il prezzo deve essere un numero.',
+            'price.max' => 'Il prezzo non può superare :max cifre.',
+            'series.max' => 'La serie non può essere più lunga di :max caratteri.',
+            'sale_date.date' => 'La data di vendita non è valida.',
+            'type.required' => 'Il tipo è obbligatorio.',
+            'type.max' => 'Il tipo non può essere più lungo di :max caratteri.',
+            'artists.required' => 'Gli artisti sono obbligatori.',
+            'artists.max' => 'La lista degli artisti non può essere più lunga di :max caratteri.',
+            'writers.required' => 'Gli scrittori sono obbligatori.',
+            'writers.max' => 'La lista degli scrittori non può essere più lunga di :max caratteri.',
         ]);
 
         //$comicData = $request->all();
