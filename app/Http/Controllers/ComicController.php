@@ -30,7 +30,18 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        $comicData = $request->all();
+        $comicData =$request->validate([
+            'title'=>'required|max:64',
+            'description'=>'nullable|max:4096',
+            'thumb'=>'nullable|url',
+            'price'=>'nullable|number|max:30',
+            'series'=>'nullable|string|max:300',
+            'sale_date'=>'nullable|date|max:300',
+            'type'=>'required|string|max:128',
+            'artists'=>'required|string|max:640',
+            'writers'=>'required|string|max:640',
+        ]);
+        //$comicData = $request->all(); senza validation 
 
         $comic = new Comic();
         $comic->title = $comicData ['title'];
@@ -70,7 +81,19 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        $comicData = $request->all();
+        $comicData =$request->validate([
+            'title'=>'required|max:64',
+            'description'=>'nullable|max:4096',
+            'thumb'=>'nullable|url',
+            'price'=>'nullable|number|max:30',
+            'series'=>'nullable|string|max:300',
+            'sale_date'=>'nullable|date|max:300',
+            'type'=>'required|string|max:128',
+            'artists'=>'required|string|max:640',
+            'writers'=>'required|string|max:640',
+        ]);
+
+        //$comicData = $request->all();
         //manipolo i dati per poi aggiornali nel db
         $comicData["price"] = floatval( $comicData ['price']);
         $supportArray = explode(",", $comicData ['artists']);
